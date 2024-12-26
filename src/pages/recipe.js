@@ -6,22 +6,19 @@ const RecipesPages = () => {
     <div>
       {data.map((food) => {
         return (
-          <div>
-            <h2>Delicious Recipes</h2>
-            <h4>Baked Salmon</h4>
+          <div key={food.name}>
             {food.ingredients.map((ingredient, index) => {
               return (
                 <Ingredient
-                  key={index}
+                  key={`${ingredient.name}-${index}`}
                   name={ingredient.name}
                   amount={ingredient.amount}
                   measurement={ingredient.measurement}
                 />
               );
             })}
-            <h5>Cooking Instructions</h5>
-            {food.steps.map((value, index) => {
-              return <Step key={index} steps={value} />;
+            {food.steps.map((step, index) => {
+              return <Step key={`${step}-${index}`} steps={step} />;
             })}
           </div>
         );

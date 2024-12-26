@@ -1,4 +1,4 @@
-import { Ingredient } from "../components/Ingredientngredient";
+import { Ingredient } from "../components/Ingredient";
 import { Step } from "@/components/Step";
 
 const RecipesPages = () => {
@@ -6,19 +6,22 @@ const RecipesPages = () => {
     <div>
       {data.map((food) => {
         return (
-          <div>
+          <div key={food.name}>
             {food.ingredients.map((ingredient, index) => {
               return (
                 <Ingredient
-                  key={index}
+                  key={`${ingredient.name}-${index}`}
                   name={ingredient.name}
                   amount={ingredient.amount}
                   measurement={ingredient.measurement}
                 />
               );
             })}
-            {food.steps.map((value, index) => {
-              return <Step key={index} steps={value} />;
+            {food.steps.map((step, index) => {
+              return <Step key={`${step}-${index}`} steps={step} />;
+              {
+                /* Use step text and index */
+              }
             })}
           </div>
         );

@@ -11,6 +11,9 @@ const RecipesPages = () => {
       <Link href={"post-data"}>
         <button className="">Муур</button>
       </Link>
+      <Link href={"recipes"}>
+        <button className="">Хоолны Жор2</button>
+      </Link>
     </div>
   );
 };
