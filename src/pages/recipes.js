@@ -19,9 +19,6 @@ const RecipesPages = () => {
             })}
             {food.steps.map((step, index) => {
               return <Step key={`${step}-${index}`} steps={step} />;
-              {
-                /* Use step text and index */
-              }
             })}
           </div>
         );
