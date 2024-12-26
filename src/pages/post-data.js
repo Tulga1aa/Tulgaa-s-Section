@@ -141,7 +141,7 @@ const BlogPost = ({ title, body }) => {
 
 const BlogPostPage = () => {
   return (
-    <div>
+    <div style={styles.container}>
       {posts.map((post, index) => {
         return <BlogPost key={index} title={post.title} body={post.body} />;
       })}
@@ -151,7 +151,11 @@ const BlogPostPage = () => {
 
 const styles = {
   container: {
-    maxWidth: "800px",
+    display: "flex",
+
+    flexWrap: "wrap",
+
+    maxWidth: "400px",
 
     margin: "0 auto",
 
